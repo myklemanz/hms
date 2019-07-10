@@ -18,12 +18,12 @@ class AppController extends Controller
     }
 
     /**
-     * @Route("/about", name="about")
+     * @Route("/about-us", name="about")
      * 
      */
     public function aboutUsAction()
     {
-        return $this->render('@App/default/about-us.html.twig', []);
+        return $this->render('@App/default/about.us.html.twig', []);
     }
 
     
