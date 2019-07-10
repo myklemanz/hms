@@ -10,11 +10,21 @@ class AppController extends Controller
 {
     /**
      * @Route("/", name="home")
+     * 
      */
-    public function indexAction()
+    public function homeAction()
     {
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('@App/default/home.html.twig', []);
     }
+
+    /**
+     * @Route("/about", name="about")
+     * 
+     */
+    public function aboutUsAction()
+    {
+        return $this->render('@App/default/about-us.html.twig', []);
+    }
+
+    
 }
