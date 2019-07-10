@@ -2,7 +2,7 @@
     <div class="container py-1">
         <div class="row align-items-center">
         <div class="col-8 col-md-8 col-lg-4">
-            <h1 class=""><a href="index.html" class="h5 text-uppercase text-black"><strong>HomeSpace<span class="text-danger">.</span></strong></a></h1>
+            <h1 class=""><a href="{{ path('home') }}" class="h5 text-uppercase text-black"><strong>HomeSpace<span class="text-danger">.</span></strong></a></h1>
         </div>
         <div class="col-4 col-md-4 col-lg-8">
             <nav class="site-navigation text-right text-md-right" role="navigation">
@@ -11,7 +11,7 @@
 
             <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="active">
-                <a href="index.html">Home</a>
+                <a href="{{ path('home') }}">Home</a>
                 </li>
                 <li class="has-children">
                 <a href="properties.html">Properties</a>
@@ -30,8 +30,8 @@
                 </ul>
                 </li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ path('about')}}">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
             </nav>
         </div>
