@@ -27,6 +27,14 @@ class AppController extends Controller
     }
 
     /**
+     * @Route("/blog", name="blog")
+     */
+    public function blogAction()
+    {
+        return $this->render('@App/default/blog.html.twig');
+    }
+
+    /**
      * @Route("/contact-us", name="contact")
      */
     public function contactUsAction()
