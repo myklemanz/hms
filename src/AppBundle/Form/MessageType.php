@@ -24,31 +24,11 @@ class MessageType extends AbstractType
         $object = $builder->getData();
 
         $builder
-            ->add(
-                'id',
-                HiddenType::class
-            )
-            ->add(
-                'name',
-                TextType::class,
-                [
-                    'required' => true
-                ]
-            )
-            ->add(
-                'email',
-                EmailType::class,
-                [
-                    'required' => true
-                ]
-            )
-            ->add(
-                'message',
-                TextareaType::class,
-                [
-                    'required' => true
-                ]
-            );
+            ->add('id', HiddenType::class)
+            ->add('name', TextType::class, ['attr' => ['class' => 'form-control'], 'label' => false, 'required' => true])
+            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control'], 'label' => false, 'required' => true])
+            ->add('message', TextareaType::class, ['attr' => ['class' => 'form-control'], 'label' => false, 'required' => true])
+            ->getForm();
     }
 
     public function configureOptions(OptionsResolver $resolver)
