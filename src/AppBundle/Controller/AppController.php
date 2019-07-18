@@ -53,8 +53,6 @@ class AppController extends Controller
             $message = $form->getData();
             $message->setCreatedAt(new \DateTime());
 
-            dump($message);exit;
-
             $entityManager->persist($message);
             $entityManager->flush();
 

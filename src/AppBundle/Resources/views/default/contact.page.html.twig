@@ -14,18 +14,16 @@
 <!-- Contact Form Begin -->
 <div class="site-section">
     <div class="container">
+    {% include 'default/alert.html.twig' %}
     <div class="row">
         <div class="col-md-12 col-lg-8 mb-5">
-        {#<form action="#" class="p-5 bg-white border">#}
         {{ form_start(form) }}
-
             <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                     <label class="font-weight-bold" for="fullname">Full Name</label>
                     {{ form_row(form.name) }}
                 </div>
             </div>
-
             <div class="row form-group">
                 <div class="col-md-12">
                     <label class="font-weight-bold" for="email">Email</label>
