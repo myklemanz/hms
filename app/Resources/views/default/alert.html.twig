@@ -1,0 +1,26 @@
+{% if app.session.flashBag.has('success') %}
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+        {% for msg in app.session.flashBag.get('success') %}
+            {{ msg }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if app.session.flashBag.has('error') %}
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {% for msg in app.session.flashBag.get('error') %}
+            {{ msg }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if app.session.flashBag.has('warning') %}
+    <div class="alert alert-warning alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {% for msg in app.session.flashBag.get('warning') %}
+            {{ msg }}
+        {% endfor %}
+    </div>
+{% endif %}
