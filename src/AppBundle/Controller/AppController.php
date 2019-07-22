@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Message;
 use AppBundle\Form\MessageType;
+use AppBundle\Util\Message\Helper\MessageHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,7 +42,7 @@ class AppController extends Controller
      * @param Request $request
      *
      */
-    public function contactUsAction(Request $request)
+    public function contactUsAction(Request $request, MessageHelper $messageHelper)
     {
         $message = new Message();
         $form = $this->createForm(MessageType::class, null, ['validation_groups' => ['contact', 'Default']]);
@@ -55,6 +56,8 @@ class AppController extends Controller
 
             $entityManager->persist($message);
             $entityManager->flush();
+
+            $messageHelper->sendNotification($message, $this->getParameter('mailer_user'));
 
             $this->addFlash('success', 'Message sent successfully.');
 
