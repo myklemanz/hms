@@ -32,8 +32,8 @@ class MessageHelper
                 $this->templating->render(
                     'default/email_message.html.twig',
                     [
-                        'name' => $message->getName(),
-                        'email' => $message->getEmail(),
+                        'name'    => $message->getName(),
+                        'email'   => $message->getEmail(),
                         'message' => $message->getMessage()
                     ]
                 ),
