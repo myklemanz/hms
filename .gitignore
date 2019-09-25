@@ -16,4 +16,10 @@
 /vendor/
 /web/bundles/
 
+// Added Files
 home realty info.code-workspace
+.idea
+.DS_Store
+web/assets/homespace/.DS_Store
+web/assets/.DS_Store
+web/assets/homespace/.DS_Store
