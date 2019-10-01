@@ -19,12 +19,13 @@ class Version20190729033652 extends AbstractMigration
         $this->addSql('CREATE SEQUENCE property_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE property (
                 id INT NOT NULL,
+                property_id VARCHAR(100) NOT NULL,
                 lot_size DECIMAL NOT NULL,
-                property_status VARCHAR(100) NOT NULL,
-                property_type VARCHAR(100) NOT NULL,
+                property_status VARCHAR(50) NOT NULL,
+                property_type VARCHAR(50) NOT NULL,
                 number_of_bedrooms SMALLINT NOT NULL,
                 number_of_bathrooms SMALLINT NOT NULL,
-                location VARCHAR(100) NOT NULL,
+                location VARCHAR(255) NOT NULL,
                 price VARCHAR(100) NOT NULL,
                 year_build 
                 PRIMARY KEY(id)
