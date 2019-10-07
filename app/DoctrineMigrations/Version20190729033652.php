@@ -27,7 +27,7 @@ class Version20190729033652 extends AbstractMigration
                 number_of_bathrooms SMALLINT NOT NULL,
                 location VARCHAR(255) NOT NULL,
                 price VARCHAR(100) NOT NULL,
-                year_build 
+                year_build VARCHAR(50) NOT NULL,
                 PRIMARY KEY(id)
             )
         ');
