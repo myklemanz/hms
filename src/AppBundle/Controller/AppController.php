@@ -52,7 +52,7 @@ class AppController extends Controller
             $this->addFlash('warning', 'Property not found.');
             return $this->redirectToRoute('home');     
         }
-        
+
         return $this->render('@App/default/property-details.html.twig',
             [
                 'property'  => $property
