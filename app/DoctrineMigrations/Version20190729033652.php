@@ -20,6 +20,7 @@ class Version20190729033652 extends AbstractMigration
         $this->addSql('CREATE TABLE property (
                 id INT NOT NULL,
                 property_id VARCHAR(100) NOT NULL,
+                description TEXT NOT NULL, 
                 lot_size DECIMAL NOT NULL,
                 property_status VARCHAR(50) NOT NULL,
                 property_type VARCHAR(50) NOT NULL,
@@ -27,7 +28,7 @@ class Version20190729033652 extends AbstractMigration
                 number_of_bathrooms SMALLINT NOT NULL,
                 location VARCHAR(255) NOT NULL,
                 price VARCHAR(100) NOT NULL,
-                year_build 
+                year_build VARCHAR(50) NOT NULL,
                 PRIMARY KEY(id)
             )
         ');
@@ -40,6 +41,6 @@ class Version20190729033652 extends AbstractMigration
     {
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
         $this->addSql('DROP SEQUENCE property_id_seq CASCADE');
-        $this->addSql('DROP TABLE message');
+        $this->addSql('DROP TABLE property');
     }
 }

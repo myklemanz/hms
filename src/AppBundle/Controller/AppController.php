@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Message;
+use AppBundle\Entity\Property;
 use AppBundle\Form\MessageType;
 use AppBundle\Util\Message\Helper\MessageHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -35,6 +36,28 @@ class AppController extends Controller
     public function blogAction()
     {
         return $this->render('@App/default/blog.html.twig');
+    }
+
+    /**
+     * @Route("/property_details/{propertyId}", name="property-details")
+     * @param string $propertyId
+     * 
+     */
+    public function showPropertyDetailsAction(string $propertyId)
+    {
+        $repository = $this->getDoctrine()->getRepository(Property::class);
+        $property = $repository->findOneBy(['propertyId' => $propertyId]);
+
+        if (empty($property)) {
+            $this->addFlash('warning', 'Property not found.');
+            return $this->redirectToRoute('home');     
+        }
+
+        return $this->render('@App/default/property-details.html.twig',
+            [
+                'property'  => $property
+            ]    
+        );
     }
 
     /**
