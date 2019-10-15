@@ -566,8 +566,8 @@ a {
   .site-blocks-cover .text {
     text-align: left;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 100px;
+    right: 200px;
     background: #fff;
     padding: 40px;
     width: 30%; 
