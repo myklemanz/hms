@@ -22,6 +22,24 @@ class AppController extends Controller
     }
 
     /**
+     * @Route("/buy", name="buy")
+     * 
+     */
+    public function displayPropertiesForSale()
+    {
+        return $this->render('@App/default/for.sale.html.twig', []);
+    }
+
+    /**
+     * @Route("/rent", name="rent")
+     * 
+     */
+    public function displayPropertiesForRent()
+    {
+        return $this->render('@App/default/for.rent.html.twig', []);
+    }
+
+    /**
      * @Route("/about-us", name="about")
      * 
      */
@@ -32,6 +50,7 @@ class AppController extends Controller
 
     /**
      * @Route("/blog", name="blog")
+     * 
      */
     public function blogAction()
     {
