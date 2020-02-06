@@ -25,7 +25,7 @@ class AppController extends Controller
      * @Route("/buy", name="buy")
      * 
      */
-    public function displayPropertiesForSale()
+    public function displayPropertiesForSaleAction()
     {
         return $this->render('@App/default/for.sale.html.twig', []);
     }
@@ -34,7 +34,7 @@ class AppController extends Controller
      * @Route("/rent", name="rent")
      * 
      */
-    public function displayPropertiesForRent()
+    public function displayPropertiesForRentAction()
     {
         return $this->render('@App/default/for.rent.html.twig', []);
     }
