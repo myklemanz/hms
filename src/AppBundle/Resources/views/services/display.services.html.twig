@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'milestone/shortcuts.html.twig' %}
+
+    {% include 'milestone/navigation.html.twig' %}
+
+    {% include '@App/services/summary.services.html.twig' %}
+
+    {% include 'milestone/see.properties.html.twig' %}
+
+    {% include 'milestone/footer.html.twig' %}
+
+{% endblock %}
