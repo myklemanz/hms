@@ -7,6 +7,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class ServicesController extends Controller
 {
+    
+    /**
+     * @Route("/services", name="show_services")
+     * 
+     */
+    public function showServicesAction()
+    {
+        return $this->render('@App/services/display.services.html.twig', []);
+    }   
+
     /**
      * @Route("/land-title", name="land_title")
      */
